@@ -1,0 +1,217 @@
+  /* .contenedor{
+    width: 0;
+    height: 0;
+} */
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body{
+    background: #3e6549;
+}
+
+
+
+.contenedor{
+    width: 100%; /*ancho de __*/
+    max-width: 1400px;  /*ancho maximo */
+    margin: 0px auto 0px auto;   /*el auto es para centar la pagina*/ 
+    display: grid;
+    grid-gap: 10px;  gap /*son los espaciados entre contenidos, solo aplica para partes internas*/
+    grid-template-columns: repeat(3, 1fr); /* es decir 3 de una fraccion de el espacio disponible  */
+    grid-template-rows: repeat(7, auto); /*es decir 7 filas de medida automatica*/
+
+	grid-template-areas: "header1 header1 header1"
+                         "header2 header2 header2"
+                         "portada portada portada"
+						 "nosotros nosotros nosotros"
+						 "contenido contenido sidebar"
+                         "widget-1 widget-2 sidebar"
+                         "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header1,
+.contenedor .header2,
+.contenedor .portada,
+.contenedor .nosotros,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .widget-1,
+.contenedor .widget-2,
+.contenedor .footer {
+	background: #fff;
+	padding: 20px;
+	border-radius: 0px;
+}
+/* como solo se lo aplica a los divs debemos
+especificar los demas contenedores*/ 
+
+.contenedor .header1 {
+	background: #1b2d28;
+	color: #fff;
+	/* grid-column-start: 1;
+    grid-column-end: 4;  */
+    /* empieza en la colunna uno y
+    yermina e la 4 o podemos pner -1 para abarcar toda la fila*/
+    height: 55px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    grid-area: header1;
+    
+
+}
+
+
+.redesycontacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+}
+
+.redes{
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+}
+
+/* .contacto{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+} */
+
+.horario{
+    display: flex;
+    justify-content:end ;
+}
+
+.links1{
+    color: #ffffff;
+    margin: 4px;
+}
+
+.contenedor .header2 {
+	background: #a56a1d;
+	color: #fff;
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+    grid-area: header2;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.links2{
+    margin: 10px;
+    padding: 10PX;
+}
+
+
+.contenedor .portada{
+    background: #e04f0b;
+	color: #fff;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: portada;
+
+    height: 400px;
+}
+
+
+
+
+.contenedor .nosotros{
+    background: #3da51d;
+	color: #fff;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-area: nosotros;
+}
+
+.contenedor .contenido{
+    /* grid-column: span 2; */
+    grid-area: contenido;
+} /*hacemos esto para que el contenodo abarque 
+2 columnas*/
+
+.contenedor .sidebar{
+    /* ahora para que abarque 2 columnas hacemos 
+    lo siguiente*/
+    grid-column: 3/4;
+    /* para centrar el texto de forma horizontal
+    y vertical podemos usar flexbox*/
+    background: #fAA43D;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* para abrcar las 2 filas agregamos */
+    min-height: 100px;
+    /* grid-row: span 2;  */
+    /* o 2/4*/
+    grid-area: sidebar;
+}
+
+.contenedor .widget-1
+.contenedor .widget-2{
+    background: #3e6549;
+    color: #ffffff;
+    height: 100px;
+    text-align: center;
+    /* para alinear texto usamos flexbox*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.contenedor .widget-1{
+    grid-area: widget-1 ;
+}
+.contenedor .widget-2{
+    grid-area: widget-2 ;
+}
+
+
+
+.contenedor .footer{
+    background: #12203E;
+    color: #fff;
+    /* grid-column: span 3; */
+
+    grid-area: footer;
+}
+
+/* @media screen and (max-width:768px) { 
+    .contenedor .contenido {
+        grid-column: span 3;
+    }
+    .contenedor .sidebar{
+        grid-column: 1 / -1;
+    }
+    .contenedor .widget-1{
+        grid-column: span 2;
+    }
+
+} */
+
+@media screen and (max-width:768px){
+    .contenedor{
+        grid-template-areas:
+         "header1 header1 header1"
+        "header2 header2 header2"
+        "portada portada portada"
+        "nosotros nosotros nosotros"
+        "contenido contenido contenido"
+        "sidebar sidebar sidebar"
+        "widget-1 widget-2 widget-2 "
+        "footer footer footer";
+    }
+}
