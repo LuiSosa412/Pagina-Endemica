@@ -6,11 +6,12 @@
 body{
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto Slab', serif;
 }
 
 
 body{
-    background: #3e6549;
+    background: #fefae0;
 }
 
 
@@ -20,7 +21,7 @@ body{
     max-width: 1400px;  /*ancho maximo */
     margin: 0px auto 0px auto;   /*el auto es para centar la pagina*/ 
     display: grid;
-    grid-gap: 10px;  gap /*son los espaciados entre contenidos, solo aplica para partes internas*/
+    grid-gap: 0px 10px;  /*gap son los espaciados entre contenidos, solo aplica para partes internas*/
     grid-template-columns: repeat(3, 1fr); /* es decir 3 de una fraccion de el espacio disponible  */
     grid-template-rows: repeat(7, auto); /*es decir 7 filas de medida automatica*/
 
@@ -44,100 +45,177 @@ body{
 .contenedor .widget-2,
 .contenedor .footer {
 	background: #fff;
-	padding: 20px;
+	padding: 0px;
 	border-radius: 0px;
 }
 /* como solo se lo aplica a los divs debemos
 especificar los demas contenedores*/ 
 
 .contenedor .header1 {
-	background: #1b2d28;
+	background: #283618;
+    
 	color: #fff;
 	/* grid-column-start: 1;
     grid-column-end: 4;  */
     /* empieza en la colunna uno y
     yermina e la 4 o podemos pner -1 para abarcar toda la fila*/
-    height: 55px;
+    height: 70px;
     /* display: flex;
     align-items: center;
     justify-content: center; */
     grid-area: header1;
-    
-
+    /* display: flex;
+    justify-content: space-around; */
+    box-shadow: 5px 5px 15px gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
+
 
 
 .redesycontacto{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: space-between;
-    
+    /* justify-content: space-around; */
+    margin: -30px;
 
 }
 
-.redes{
+.buttons{
     display: flex;
     align-items: start;
     justify-content: flex-start;
+
 }
 
-/* .contacto{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-} */
+
+
+.buttons {
+  min-width: 330px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons a {
+  text-decoration: none;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background: #606c38;
+  color: #f1f1f1;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  transition: all .4s ease-in-out;
+}
+
+.buttons a:hover {
+  transform: scale(1.2);
+}
+
+.contacto{
+    /* display: flex;
+    
+    align-items: center; */
+    
+}
 
 .horario{
+    text-decoration: none;
     display: flex;
     justify-content:end ;
+    margin: 0px 230px 0px 0px;
+    
 }
 
 .links1{
-    color: #ffffff;
-    margin: 4px;
+    color: #fefae0;
+    margin: 20px;
+    outline: none;
+    text-decoration: none;
 }
 
 .contenedor .header2 {
-	background: #a56a1d;
+	background: #fefae0;
 	color: #fff;
     /* grid-column-start: 1;
     grid-column-end: 4; */
     grid-area: header2;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    
 
 }
 
 .links2{
-    margin: 10px;
-    padding: 10PX;
+    margin: 0px;
+    padding: 15PX;
+    color:#283618;
+    outline: none;
+    text-decoration: none;
 }
 
+.logo{
+    
+
+}
+
+.img2{
+    height: 40px;
+
+}
+
+.menu{
+    display: flex;
+    align-self: center;
+}
 
 .contenedor .portada{
-    background: #e04f0b;
+    /* background: #e04f0b; */
 	color: #fff;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-area: portada;
 
-    height: 400px;
+    background-image: linear-gradient(rgba(5,7,12,0.40),rgba(5,7,12,0.40)),
+    url(./assets/MezcalPor.jpg);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 
 
 .contenedor .nosotros{
-    background: #3da51d;
+    background: #283618;
 	color: #fff;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-area: nosotros;
+    display: flex;
+    justify-content: flex-start;
+    grid-gap: 10px;
+    padding: 20px;
 }
 
 .contenedor .contenido{
     /* grid-column: span 2; */
     grid-area: contenido;
+    background: #fefae0;
+    padding: 20px;
+
 } /*hacemos esto para que el contenodo abarque 
 2 columnas*/
 
@@ -147,7 +225,7 @@ especificar los demas contenedores*/
     grid-column: 3/4;
     /* para centrar el texto de forma horizontal
     y vertical podemos usar flexbox*/
-    background: #fAA43D;
+    background: #606c38;
     text-align: center;
     display: flex;
     align-items: center;
@@ -174,15 +252,18 @@ especificar los demas contenedores*/
 
 .contenedor .widget-1{
     grid-area: widget-1 ;
+    background: #fefae0;
 }
 .contenedor .widget-2{
     grid-area: widget-2 ;
+    background: #fefae0;
 }
 
 
 
 .contenedor .footer{
-    background: #12203E;
+	background: #283618;
+    background: #;
     color: #fff;
     /* grid-column: span 3; */
 
