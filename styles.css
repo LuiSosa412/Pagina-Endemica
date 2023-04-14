@@ -156,12 +156,14 @@ especificar los demas contenedores*/
     color:#283618;
 
 }
-/*
-.logo{
-    
 
+
+.logo2{
+    width: 90%;
+    max-width: 400px;
 }
-*/
+
+
 .img2{
     height: 40px;
 
@@ -185,7 +187,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
-    background-color: #ececec;
+    background-color: #fefae0;
 }
 
 .logo {
@@ -223,7 +225,7 @@ header {
     }
 
     .cerrar-menu {
-        color: #ececec;
+        color: #fefae0;
     }
 
     .nav {
@@ -237,7 +239,7 @@ header {
         top: 0;
         right: 0;
         bottom: 0;
-        background-color: #1c1c1c;
+        background-color: #606c38;
         padding: 2rem;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
     }
@@ -253,7 +255,7 @@ header {
     }
 
     .nav-list li a {
-        color: #ecececec;
+        color: #fefae0;
     }
 }
 
@@ -292,7 +294,8 @@ header {
     height: 500px;
 
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -316,9 +319,51 @@ header {
     grid-area: contenido;
     background: #fefae0;
     padding: 20px;
+    text-align: justify;
+    
+
+
+    
+    
 
 } /*hacemos esto para que el contenodo abarque 
 2 columnas*/
+
+.imagen_servicios{
+    height: 110px;
+    display: flex;
+    margin: 15px;
+    border-radius: 17px;
+    box-shadow: 5px 5px 15px gray;
+    
+}
+
+.servicios_{
+    
+}
+
+h2{
+    text-align: center;
+}
+
+b{
+    font-weight: 300;
+    font-size:smaller;
+}
+
+.textos,
+.imagen_servicios{
+    display: flex;
+    column-gap: 9px;
+    align-items: center;
+    
+
+
+    
+}
+
+
+
 
 .contenedor .sidebar{
     /* ahora para que abarque 2 columnas hacemos 
@@ -432,4 +477,17 @@ header {
         justify-content: center;
 
   
+    }
+
+    .logo2{
+        width: 90%;
+        max-width: 430px;
+    }
+
+    .textos,
+    .imagen_servicios{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }    
 }
